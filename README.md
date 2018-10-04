@@ -98,9 +98,9 @@ n/a
 
 ### Overview
 
-My development approach is fairly granular. Per Agile methodologies, I believe in separating tasks, tackling them one at a time, and letting each task play into what is a final product with relative independence. By tackling each step individually and with full attention, I've enabled a number of safeguards against developing something invalid.
+My development approach is fairly granular. Per Agile methodologies, I believe in separating tasks, tackling them one at a time, and letting each task play into what is a final product with relative independence. By tackling each step individually and with full attention, I've enabled a number of safeguards against developing the wrong product, developing a non-functional product, making incorrect assumptions, building something that isn't valuable, and building something that isn't sustainable.
 
-My own ideation is one safeguard, but by then conducting empathy surveys, I tailor the product even better. Then, by architecting my solution before beginning, I can ascertain technical feasibility and check that all components of my stack can and will play well together. Following this is implementation, which is straightforward, but _testing_ becomes a critical component of the software development lifecycle; an implementation is useless if it doesn't actually function like it's supposed to. After testing is complete, I can _then_ be comfortable deploying the application to users. Finally, I recognize that requirements may change over time, my technical stack may have components become deprecated, etc. - this requires some awareness of maintenance requirements after deployment is complete.
+My own ideation is one safeguard, but by then conducting empathy surveys, I tailor the product even better. Then, by architecting my solution before beginning, I can ascertain technical feasibility and check that all components of my stack can and will play well together. Following this is implementation, which is straightforward, but _testing_ becomes a critical component of the software development lifecycle (SDLC); an implementation is useless if it doesn't actually function like it's supposed to. After testing is complete, I can _then_ be comfortable deploying the application to users. Finally, I recognize that requirements may change over time, my technical stack may have components become deprecated, etc. - this requires some awareness of maintenance requirements after deployment is complete.
 
 Each step of the process provides some sort of filtering against poor software development, and by taking care to execute each step with awareness of the product _and_ its users, I hope to be able to avoid building the wrong product or building a non-functional product.
 
@@ -116,11 +116,28 @@ Conducting empathy surveys is effectively the same as gathering requirements. Co
 
 ### Architecting
 
+The architecting stage is critical to ensure implementation doesn't occur without a solid understand of _what_ is being developed and _how_ it's being built. This is a huge safeguard for the development process and allows me to catch errors before they make their way into the codebase. This stage involves understanding my end product and determining what my technical stack will look like, how data will be communicated end-to-end, and what specific technical challenges I might face (meaning I can prepare for them/research them before diving into implementation).
+
+I believe this stage to be an especially core component of the SDLC; this is what distinguishes software _engineering_ from programming. It's necessary to understand the product being built, how it will be built on its own, and how it plays into a broader ecosystem of problems, data, users, and software. This stage also allows us to ensure that the application development is sustainable and assumptions made about the product are correct from a technical perspective.
 
 ### Implementation
 
+After architecting a solution, the actual product can be developed. The rationale for this stage should be obvious - code must be written for a product to finally exist. In this stage, I'll be taking the software architecture devised in the previous stage of development and bringing it to fruition, tackling technical challenges along the way. It's at this point that estimates may need to be refined should technical hurdles arise. This is to be expected - again, especially at this stage - and appropriate buffers in our time estimates need to exist to account for such hurdles.
+
+This application will be developed with a NodeJS backend and using the Twilio API. Additionally, the deployment phase will leverage AWS EC2 to make the product publicly accessible to its end users.
+
 ### Testing
+
+Once the product is implemented, to ensure functionality in any and all cases, thorough testing must occur. This is likely to involve unit testing, integration testing, as well as manual beta testing with users to ensure the software behaves correctly and as expected. Should anything in this stage be deemed problematic, we cycle back to the implementation stage to remedy problems. This stage is _absolutely critical_ before deployment; we need one final check that our product is functional and works in practice. This is also a safeguard against delivering the wrong product or any false assumptions that weren't caught by this point.
+
+Testing will leverage some existing NodeJS testing framework - perhaps Mocha - alongside manual human testing of end-to-end functionality.
 
 ### Deployment
 
+After the product is what the users want - which is determined via testing - it can be deployed for use. Without deployment, the software may reside in a repository and be kept from the world, rendering it useless.
+
+Deployment will take advantage of AWS EC2, making the service's API open for use in some form.
+
 ### Maintenance
+
+Maintenance is critical for a slew of reasons. This allows me to tackle technical challenges that didn't exist during implementation (e.g., an API changes, an external service is deprecated, etc) and restore the desired application state. This also serves as a final check for anything that _may_ have slipped through the cracks of the development process, such as strange corner cases. Finally, this provides the opportunity to add features as users' needs change over time, which is a natural flow of events for software built with the human users in mind. Things change and software will have to keep up - hence, a maintenance stage being so critical to the SDLC.
