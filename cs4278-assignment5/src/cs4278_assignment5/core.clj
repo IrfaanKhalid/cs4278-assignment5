@@ -45,6 +45,6 @@
   (twilio/with-auth "TWILIO_SID" "TWILIO_AUTH_TOKEN"
     @(twilio/send-sms
        {:From "+13127577784"
-        :To "+18152809862"
+        :To "YOUR_PHONE_NUM"
         :Body (get-final-data)})))
   
