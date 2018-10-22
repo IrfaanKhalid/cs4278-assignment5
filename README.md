@@ -141,3 +141,5 @@ Deployment will take advantage of AWS EC2, making the service's API open for use
 ### Maintenance
 
 Maintenance is critical for a slew of reasons. This allows me to tackle technical challenges that didn't exist during implementation (e.g., an API changes, an external service is deprecated, etc) and restore the desired application state. This also serves as a final check for anything that _may_ have slipped through the cracks of the development process, such as strange corner cases. Finally, this provides the opportunity to add features as users' needs change over time, which is a natural flow of events for software built with the human users in mind. Things change and software will have to keep up - hence, a maintenance stage being so critical to the SDLC.
+
+## How to Use
