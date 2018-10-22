@@ -2,6 +2,9 @@
   (:gen-class))
 
 (defn -main
-  "I don't do a whole lot ... yet."
   [& args]
-  (println "Hello, World!"))
+  (twilio/with-auth "YOUR_TWILIO_ACCOUNT_SID" "YOUR_TWILIO_AUTH_TOKEN"
+    @(twilio/send-sms
+       {:From "YOUR_TWILIO_PHONE_NUMBER"
+        :To "YOUR_PHONE_NUMBER"
+        :Body "Hello from Clojure!"})))
