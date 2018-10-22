@@ -26,3 +26,5 @@ Clone this repo.
 6. Run `lein run` a text!
 
 ## Remote Execution from EC2
+
+## Testing
