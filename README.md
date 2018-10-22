@@ -16,5 +16,5 @@ That being said, this prototype utilizes the Twilio API to send users a random f
 2. In terminal, from the repo's root of directory, `cd cs4278-assignment5`
 3. Now, run `lein deps` to install dependencies
 4. Replace the parameters on line 45 of `core.clj` with your Twilio credentials. If you're a grader, you can use my credentials in my Brightspace submission, `part3.txt`.
-5. Replace the _:To_ phone number on line 48 of core.clj with your own.
+5. Replace the _:To_ phone number on line 48 of core.clj with your own using E.164 notation.
 6. Run `lein run` a text!
