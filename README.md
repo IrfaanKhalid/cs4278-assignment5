@@ -27,6 +27,8 @@ Clone this repo.
 
 ## Remote Execution from EC2
 
+Several issues were faced during deployment, but an attempt was made. For the sake of the prototype, execution can occur locally.
+
 ## Testing
 
 To run unit tests, run `lein test` from the root of the project directory.
