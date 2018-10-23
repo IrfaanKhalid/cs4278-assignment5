@@ -1,0 +1,13 @@
+{
+  "name": "asgnx",
+  "description": "",
+  "version": "0.1.0",
+  "dependencies": {
+    "aws-sdk": "^2.340.0",
+    "serverless-secrets-plugin": "^0.1.0"
+  },
+  "devDependencies": {
+    "serverless-cljs-plugin": "^0.2.2",
+    "serverless-secrets": "^3.0.0-beta.12"
+  }
+}
