@@ -28,3 +28,6 @@ Clone this repo.
 ## Remote Execution from EC2
 
 ## Testing
+
+To run unit tests, run `lein test` from the root of the project directory.
+Integration testing is performed by running the script and seeing if you receive a test message.
