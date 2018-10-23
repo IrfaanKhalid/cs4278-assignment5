@@ -36,9 +36,9 @@
 (def raw-data-vec 
   (get-raw-data-vec))
 
-;; Returns string with all relevant data
-(defn get-final-data [] 
-  (str (nth raw-data-vec 1) " can be reached at " (nth raw-data-vec 3)))
+;; Returns string with final message from a vector
+(defn get-final-data [data] 
+  (str (nth data 1) " can be reached at " (nth data 3)))
 
 (defn -main
   [& args]
@@ -46,5 +46,5 @@
     @(twilio/send-sms
        {:From "+13127577784"
         :To "YOUR_PHONE_NUM"
-        :Body (get-final-data)})))
+        :Body (get-final-data raw-data-vec)})))
   
